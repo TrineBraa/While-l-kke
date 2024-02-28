@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksempel, Marie</title>
+</head>
+
+<body>
+    <div id="display"></div>
+    <button onclick="multiplyBy2()">multiply by 2</button>
+    <br />
+    <div id="showText"></div>
+    <button onclick="getFirstWord()">get the first word</button>
+
+    <script>
+        function multiplyBy2() {
+            let number = 2;                                                          //start nummer variabelen
+            while (number <= 100) {                                                 //Sette en betingelse slik at ikke løkken kjører uendelig og krasjer.
+                number = number * 2;                                                //Denne ganger nummeret i variabelen med 2 og det blir den nye variabelen.
+                document.getElementById("display").innerHTML += number + ' ';       //denne printer ut tallene med et mellomrom.
+            }
+        }
+
+        function getFirstWord() {
+            let text = 'Trine trenger søvn';
+            let seperator = '';
+            let firstWord = '';
+            let index = 0;                          //Lage egen teller inne i while løkken siden den ikke har innebygget teller.
+
+            while (seperator !== ' ') {             //Så lenge separeatoren ikke er mellomrom skal denne løkken kjøres.
+                if (text.charAt(index) === ' ') {      //Dersom texten sin karakter på indexplassen er mellomrom skal separator bli til mellomrom.
+                    seperator = ' ';
+                }
+                firstWord += text.charAt(index);    //firstWord skal legge til carakteren som er på index plassen i text variabelen.
+                index++;
+                document.getElementById('showText').innerHTML += firstWord + ' ';
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
